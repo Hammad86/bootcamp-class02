@@ -18,5 +18,5 @@ jobs:
       run: npm install -g surge
        
     - name: deploying on surge
-      run: surge ./build bootcamp-reac-class001.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+      run: sudo surge ./build bootcamp-reac-class001.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
      
