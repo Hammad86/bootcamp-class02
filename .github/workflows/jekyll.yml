@@ -1,0 +1,22 @@
+name: bootcanp class002
+
+on:
+  push:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: installing nodejs
+      uses: actions/setup-node@v2-beta
+      
+    - name: installing surge
+      run: npm install -g surge
+       
+    - name: deploying on surge
+      run: surge ./build bootcamp-reac-class001.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+     
